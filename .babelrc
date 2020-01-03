@@ -1,0 +1,16 @@
+{
+  "presets": ["@babel/preset-react", "@babel/preset-typescript"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "cwd": "babelrc",
+        "alias": {
+          "@app-screens": "./src/ui/screens/common",
+          "@app-screens/common": "./src/ui/screens/common/index.tsx"
+        }
+      }
+    ]
+  ]
+}
