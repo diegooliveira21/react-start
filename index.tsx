@@ -1,7 +1,7 @@
 // index.js
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Home } from './src/ui/screens/common/index'
+import { Home } from '@app-screens'
 
 const App = () => <Home />
 

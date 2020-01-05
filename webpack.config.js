@@ -9,5 +9,6 @@ module.exports = options => {
         { test: /\.tsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
       ],
     },
+    watch: true,
   }
 }
