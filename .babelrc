@@ -7,7 +7,7 @@
         "root": ["./src"],
         "cwd": "babelrc",
         "alias": {
-          "@app-screens": "./src/ui/screens/common",
+          "@app-screens": "./src/ui/screens/common/index.tsx",
           "@app-screens/common": "./src/ui/screens/common/index.tsx"
         }
       }
