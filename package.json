@@ -4,9 +4,9 @@
   "description": "A quick starter point to dev react projects",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --env.dev",
-    "dev2": "http-server dist && webpack --mode=development",
-    "prod": "webpack --mode=production && http-server dist"
+    "dev": "webpack-dev-server --env.dev --mode=development",
+    "hml": "webpack-dev-server --env.hml --mode=development",
+    "prod": "webpack-dev-server --env.prod --mode=production"
   },
   "author": "Diego Oliveira",
   "license": "ISC",

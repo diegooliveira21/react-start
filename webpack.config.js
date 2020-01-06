@@ -1,14 +1,43 @@
-module.exports = options => {
-  return {
-    entry: './index.tsx',
-    output: {
-      filename: 'bundle.js',
-    },
-    module: {
-      rules: [
-        { test: /\.tsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
+const webpack = require('webpack')
+
+const baseConfig = {
+  mode: 'development',
+  entry: './index.tsx',
+  output: {
+    filename: 'bundle.js',
+  },
+  module: {
+    rules: [
+      { test: /\.tsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
+    ],
+  },
+  watch: true,
+}
+
+module.exports = argv => {
+  if (argv.dev) {
+    console.log('develop mode ON')
+    return {
+      ...baseConfig,
+      plugins: [
+        new webpack.DefinePlugin({
+          ENV_API: JSON.stringify('dev2'),
+        }),
       ],
-    },
-    watch: true,
+    }
+  }
+
+  if (argv.hml) {
+    console.log('homolog mode ON')
+    return {
+      ...baseConfig,
+    }
+  }
+
+  if (argv.prod) {
+    console.log('production mode ON')
+    return {
+      ...baseConfig,
+    }
   }
 }

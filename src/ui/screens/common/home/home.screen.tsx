@@ -1,6 +1,8 @@
 // index.js
 import React from 'react'
 
+console.log('prod', ENV_API)
+
 const styles = {
   app: {
     paddingTop: 40,
