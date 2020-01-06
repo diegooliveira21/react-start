@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 
 const baseConfig = {
-  mode: 'development',
   entry: './index.tsx',
   output: {
     filename: 'bundle.js',
@@ -21,7 +20,7 @@ module.exports = argv => {
       ...baseConfig,
       plugins: [
         new webpack.DefinePlugin({
-          ENV_API: JSON.stringify('dev2'),
+          ENV_API: JSON.stringify('dev'),
         }),
       ],
     }
@@ -31,6 +30,11 @@ module.exports = argv => {
     console.log('homolog mode ON')
     return {
       ...baseConfig,
+      plugins: [
+        new webpack.DefinePlugin({
+          ENV_API: JSON.stringify('hml'),
+        }),
+      ],
     }
   }
 
@@ -38,6 +42,11 @@ module.exports = argv => {
     console.log('production mode ON')
     return {
       ...baseConfig,
+      plugins: [
+        new webpack.DefinePlugin({
+          ENV_API: JSON.stringify('prod'),
+        }),
+      ],
     }
   }
 }
