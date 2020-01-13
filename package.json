@@ -4,14 +4,16 @@
   "description": "A quick starter point to dev react projects",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --env.dev",
-    "dev2": "http-server dist && webpack --mode=development",
-    "prod": "webpack --mode=production && http-server dist"
+    "dev": "webpack-dev-server --env.api=dev2 --mode=development --colors --progress",
+    "hml": "webpack-dev-server --env.hml --mode=development --colors --progress",
+    "prod": "webpack-dev-server --env.prod --mode=production --colors --progress",
+    "build": "webpack --env.prod --mode=production --colors --progress"
   },
   "author": "Diego Oliveira",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.7.7",
+    "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.7",
@@ -35,6 +37,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "@babel/runtime": "^7.7.7",
     "babel-runtime": "^6.26.0"
   }
 }

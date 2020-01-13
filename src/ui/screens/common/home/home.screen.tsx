@@ -8,6 +8,8 @@ const styles = {
   },
 }
 
-export const Home = () => <div style={styles.app}>Welcome to React!</div>
+export const Home = () => <div style={styles.app}>Weeelcome to React!</div>
+
+console.log(`${ENV_API}`)
 
 export default Home
